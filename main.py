@@ -25,12 +25,14 @@ class EasyApply:
         self.date_posted_list = ['Any Time',
                                  'Past Month', 'Past Week', 'Past 24 hours']
         self.variable = StringVar()
-        self.variable.set(self.date_posted_list[3])
+        self.variable.set(self.date_posted_list[0])
         self.date_posted = OptionMenu(
             self.window,
             self.variable,
             *self.date_posted_list
         )
+        self.date_posted.config(width=30)
+        self.date_posted.config(borderwidth=5)
 
     def loadGUI(self):
         self.window.title("LinkedIN Easy Apply App")
@@ -57,7 +59,7 @@ class EasyApply:
         lbl_search_criteria.pack()
         self.txt_search_criteria.pack(pady=5)
         lbl_date_posted.pack()
-        self.date_posted.pack(expand=True)
+        self.date_posted.pack(expand=True, pady=5)
         submit_button.pack(pady=30)
         self.window.mainloop()
 
